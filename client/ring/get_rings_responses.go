@@ -42,7 +42,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"models"
+	"github.com/haproxytech/client-native/v4/models"
 )
 
 // GetRingsReader is a Reader for the GetRings structure.

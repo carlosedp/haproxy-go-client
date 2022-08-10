@@ -38,7 +38,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"models"
+	"github.com/haproxytech/client-native/v4/models"
 )
 
 // GetServicesHaproxyRuntimeAclsIDReader is a Reader for the GetServicesHaproxyRuntimeAclsID structure.

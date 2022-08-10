@@ -9,6 +9,7 @@ if [[ ! -d "client-native-repo" ]]; then
     git clone --quiet "https://github.com/haproxytech/client-native" "client-native-repo" "$@"
 else
     pushd "client-native-repo" >/dev/null || return
+    git checkout master
     git pull --autostash --quiet
     popd >/dev/null || return
 fi
@@ -26,7 +27,8 @@ chmod +x swagger
 # Generate the client
 mkdir -p "$GOPATH/src/github.com/carlosedp/haproxy-go-client"
 
-./swagger generate client -f haproxy_spec.yaml -A "Data Plane" -t "$GOPATH/src/github.com/carlosedp/haproxy-go-client" --existing-models ./models -r ../header.txt
+MAJOR_VER=$(echo "4.0.0" |cut -d. -f1)
+./swagger generate client -f haproxy_spec.yaml -A "Data Plane" -t "$GOPATH/src/github.com/carlosedp/haproxy-go-client" --existing-models "github.com/haproxytech/client-native/v${MAJOR_VER}/models" -r ../header.txt
 cp -R "$GOPATH"/src/github.com/carlosedp/haproxy-go-client/* ../
 # rm -rf "$GOPATH/src/github.com/carlosedp/haproxy-go-client"
 popd  || exit

@@ -41,7 +41,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"models"
+	"github.com/haproxytech/client-native/v4/models"
 )
 
 // NewAddPayloadRuntimeACLParams creates a new AddPayloadRuntimeACLParams object,

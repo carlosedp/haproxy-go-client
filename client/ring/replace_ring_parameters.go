@@ -42,7 +42,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"models"
+	"github.com/haproxytech/client-native/v4/models"
 )
 
 // NewReplaceRingParams creates a new ReplaceRingParams object,

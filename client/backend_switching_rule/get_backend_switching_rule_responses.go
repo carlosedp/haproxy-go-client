@@ -41,7 +41,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"models"
+	"github.com/haproxytech/client-native/v4/models"
 )
 
 // GetBackendSwitchingRuleReader is a Reader for the GetBackendSwitchingRule structure.

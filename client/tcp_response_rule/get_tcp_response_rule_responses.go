@@ -41,7 +41,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"models"
+	"github.com/haproxytech/client-native/v4/models"
 )
 
 // GetTCPResponseRuleReader is a Reader for the GetTCPResponseRule structure.

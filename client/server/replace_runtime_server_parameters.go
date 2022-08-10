@@ -41,7 +41,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"models"
+	"github.com/haproxytech/client-native/v4/models"
 )
 
 // NewReplaceRuntimeServerParams creates a new ReplaceRuntimeServerParams object,
