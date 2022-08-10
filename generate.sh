@@ -25,10 +25,12 @@ curl -Ls -o swagger "https://github.com/go-swagger/go-swagger/releases/download/
 chmod +x swagger
 
 # Generate the client
+rm -rf "$GOPATH/src/github.com/carlosedp/haproxy-go-client"
 mkdir -p "$GOPATH/src/github.com/carlosedp/haproxy-go-client"
 
 MAJOR_VER=$(echo "4.0.0" |cut -d. -f1)
-./swagger generate client -f haproxy_spec.yaml -A "Data Plane" -t "$GOPATH/src/github.com/carlosedp/haproxy-go-client" --existing-models "github.com/haproxytech/client-native/v${MAJOR_VER}/models" -r ../header.txt
+./swagger generate client -f haproxy_spec.yaml -A "DataPlane" -t "$GOPATH/src/github.com/carlosedp/haproxy-go-client" --existing-models "github.com/haproxytech/client-native/v${MAJOR_VER}/models" -r ../header.txt
+rm -rf client models
 cp -R "$GOPATH"/src/github.com/carlosedp/haproxy-go-client/* ../
 # rm -rf "$GOPATH/src/github.com/carlosedp/haproxy-go-client"
 popd  || exit
